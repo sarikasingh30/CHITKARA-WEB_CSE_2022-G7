@@ -15,6 +15,7 @@
 //     console.log("Stay")
 // }
 
-setInterval(()=>{
+let id1=setInterval(()=>{
     console.log("Bye")
 },3000)
+clearInterval(id1)
