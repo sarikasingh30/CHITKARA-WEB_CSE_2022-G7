@@ -1,0 +1,1 @@
+Notes (Lecture Wise)=> https://1drv.ms/o/s!AoUovYGez8mHcEuNVgPQ2YXCdXc?e=jDhesW
