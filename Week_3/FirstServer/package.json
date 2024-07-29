@@ -1,0 +1,15 @@
+{
+  "name": "firstserver",
+  "version": "1.0.0",
+  "description": "Creating A first Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sarika",
+  "license": "ISC",
+  "dependencies": {
+    "jimp": "^0.22.12",
+    "lodash": "^4.17.21"
+  }
+}
