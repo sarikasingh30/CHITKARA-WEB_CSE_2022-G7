@@ -23,25 +23,30 @@ app.get("/contact", (req, res) => {
   });
 });
 
+//PARAMS
+// http://localhost:8080/wish/sam
+// http://localhost:8080/wish/sam/noon
 app.get("/greet/:name/:day", (req, res) => {
   console.log(req.params);
   res.send(`<h1>Hello ${req.params.name}, Good ${req.params.day}</h1>`);
 });
 
+//QUERY PARAMETERS
 // http://localhost:5000/wish?name=sam
 // http://localhost:5000/wish?name=sam&day=morning
 // http://localhost:5000/wish?name=sam&day=morning&voting=true
 app.get("/wish", (req, res) => {
-  console.log(typeof(!!req.query.voting));
-  req.query.voting=!!req.query.voting
-  if (req.query.voting==true) {
-    res.send(`<h1>Hello ${req.query.name},
-    day ${req.query.day}, You Are Eligible</h1>`);
-  }
-  else if(req.query.voting==false){
-    res.send(`<h1>Hello ${req.query.name},
-        day ${req.query.day}, You Are Not Eligible</h1>`);
-  }
+  // console.log(typeof(!!req.query.voting));
+  let x=Boolean(req.query.voting)
+  console.log(x)
+  // if (req.query.voting==true) {
+  //   res.send(`<h1>Hello ${req.query.name},
+  //   day ${req.query.day}, You Are Eligible</h1>`);
+  // }
+  // else if(req.query.voting==false){
+  //   res.send(`<h1>Hello ${req.query.name},
+  //       day ${req.query.day}, You Are Not Eligible</h1>`);
+  // }
 });
 
 app.listen(PORT, (err) => {
