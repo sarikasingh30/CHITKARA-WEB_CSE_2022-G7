@@ -12,16 +12,13 @@ app.get("/gettodos",(req,res)=>{
 
 })
 
-app.post("/addtodos",(req,res)=>{
-  
-})
-app.post("/deletetodos",(req,res)=>{
-  
-})
+app.post("/addtodos",(req,res)=>{})
+app.post("/deletetodos",(req,res)=>{})
+
 app.listen(PORT, (err) => {
     if (err) {
       console.log("error", err);
     } else {
       console.log(`Listening on Port ${PORT}`);
     }
-  });
+});

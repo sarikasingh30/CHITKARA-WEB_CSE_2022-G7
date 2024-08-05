@@ -11,9 +11,10 @@
 <body>
     <h1>Todo App</h1>
 
-    <form action="/addtask" method="POST">
-        <input type="text" placeholder="Enter Task" class="newtask" name="name">
-        <button class="btn">Add Task</button>        
+    <form action="/addtodos" method="POST">     
+        <!-- We do this becoz we want it work even if js file won't work -->
+        <input type="text" placeholder="Enter Task" class="newtask" name="name" required>
+        <button class="btn" type="submit">Add Task</button>        
     </form>
 
     <ul class="tasklist">
