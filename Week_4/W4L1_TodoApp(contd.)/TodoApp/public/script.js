@@ -6,6 +6,7 @@ const taskList = document.querySelector(".tasklist");
 
 taskList.addEventListener("click", async(ev)=>{
     console.log(ev.target.classList.value)
+    // console.log(ev.target.getAttribute("atrid"))
     let taskID=ev.target.getAttribute("atrid")
     if(ev.target.classList.value=="deleteBtn"){
         try {

@@ -17,13 +17,10 @@ app.get("/gettodos", (req, res) => {
 });
 
 app.post("/addtodos", (req, res) => {
-    // const name=req.body.name
     const {name}=req.body
-    // val=isCompleted=="true"? true: false
     todos.push({
       id:uuidv4(),
-      name,
-      // isCompleted:val
+      name
     })
     res.redirect("/gettodos")
 
