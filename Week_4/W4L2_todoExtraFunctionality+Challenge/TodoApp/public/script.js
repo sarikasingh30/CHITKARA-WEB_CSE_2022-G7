@@ -1,7 +1,6 @@
 const btn = document.querySelector(".btn");
 const newtask = document.querySelector(".newtask");
 const taskList = document.querySelector(".tasklist");
-// const deleteBtn=document.querySelector(".deleteBtn")
 
 
 taskList.addEventListener("click", async(ev)=>{
@@ -15,6 +14,22 @@ taskList.addEventListener("click", async(ev)=>{
         } catch (error) {
             console.log(error)
         }
+    }
+    if(ev.target.classList.value=="upBtn"){
+      try {
+        let {data} = await axios.post('/increasepriority',{id:taskID})
+        mapTodo(data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    if(ev.target.classList.value=="downBtn"){
+      try {
+        let {data} = await axios.post('/decreasepriority',{id:taskID})
+        mapTodo(data)
+      } catch (error) {
+        console.log(error)
+      }
     }
 })
 
