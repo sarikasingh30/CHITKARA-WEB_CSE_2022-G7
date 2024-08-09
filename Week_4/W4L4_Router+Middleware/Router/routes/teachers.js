@@ -6,6 +6,11 @@ const teachers=[
     "Sonam",
     "Dev"
 ]
+function m1(req,res,next){
+    console.log("Time:",Date.now())
+    next()
+}
+router.use(m1)
 router.get("/",(req,res)=>{
     res.send(teachers)
 })
