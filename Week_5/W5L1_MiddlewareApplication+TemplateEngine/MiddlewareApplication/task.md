@@ -1,7 +1,11 @@
-2 APIs => 
-register  
-login 
-array of objects => 
+# TASK
+## 2 APIs
+1. register  
+2. login 
+
+Data stored in array of objects
+
+   ```
     users=[
         {
             "id":"1",
@@ -10,16 +14,23 @@ array of objects =>
             "password":"1234"
         }
     ]
-<!-- Add Middlewares Also -->
+   ```
+### Add Middlewares Also
+
 register =>(name, email, password)
+
 login => (email and password)
 
 <!-- ...................................... -->
 ## Updated Task
-2 APIs => 
-register  
-login 
-array of objects => store in JSON file (update json file)
+
+## 2 APIs
+1. register  
+2. login 
+
+Data stored in array of objects => store in JSON file (update json file)
+
+   ```
     users=[
         {
             "id":"1",
@@ -28,6 +39,11 @@ array of objects => store in JSON file (update json file)
             "password":"1234"
         }
     ]
-<!-- Add Middlewares Also -->
+   ```
+### Add Middlewares Also
+
 register =>(name, email, password)
+
 login => (email and password)
+
+---
