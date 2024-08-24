@@ -27,9 +27,7 @@ login => (email and password)
 ## 2 APIs
 1. register  
 2. login 
-
 Data stored in array of objects => store in JSON file (update json file)
-
    ```
     users=[
         {
@@ -43,7 +41,6 @@ Data stored in array of objects => store in JSON file (update json file)
 ### Add Middlewares Also
 
 register =>(name, email, password)
-
 login => (email and password)
 
 ---
