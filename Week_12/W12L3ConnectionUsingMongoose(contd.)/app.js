@@ -1,7 +1,11 @@
 const express=require("express")
-const router=express.Router()
+const mongoose = require('mongoose');
+const app=express()
+const PORT=3030
+app.use(express.json())
+const Student=require("./models/students")
 
-router.post("/",async(req,res)=>{
+app.post("/students",async(req,res)=>{
     try {
         const {name,age,marks}=req.body
         const nStudent=new Student({name,age,marks})
@@ -11,7 +15,7 @@ router.post("/",async(req,res)=>{
         res.status(400).json({"err":error})
     }
 })
-router.get("/",async(req,res)=>{
+app.get("/students",async(req,res)=>{
     try {
         let studentData=await Student.find()
         res.status(200).json({"data":studentData})
@@ -20,7 +24,7 @@ router.get("/",async(req,res)=>{
     }
 })
 
-router.get("/:id", async(req,res)=>{
+app.get("/students/:id", async(req,res)=>{
     const {id}=req.params
     // findById()
     try {
@@ -31,14 +35,14 @@ router.get("/:id", async(req,res)=>{
     }
 })
 
-router.put("/:id", async(req,res)=>{
+app.put("/students/:id", async(req,res)=>{
     const {id}=req.params
     const {name,age,marks}=req.body
     //findByIdAndUpdate(id, req.body)
     
 })
 
-router.delete("/:id", async(req,res)=>{
+app.delete("/students/:id", async(req,res)=>{
     const {id}=req.params
     // findByIdAndDelete()
     try {
@@ -52,5 +56,16 @@ router.delete("/:id", async(req,res)=>{
 
 
 
+mongoose.connect('mongodb://127.0.0.1:27017/university')
+  .then(() => {
+    console.log('database Connected!')
+    app.listen(PORT,(err)=>{
+        if(err){
+            console.log(err)
+        }
+        else{
+            console.log(`Listening on PORT ${PORT}`)
+        }
+    })
+  }).catch((err)=>console.log(err));
 
-module.exports=router

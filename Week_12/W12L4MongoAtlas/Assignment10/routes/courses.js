@@ -1,6 +1,7 @@
 const express=require("express")
 const router=express.Router()
 const Courses=require("../models/courses")
+
 router.post("/",async(req,res)=>{
     try {
         const {name,description,duration}=req.body
@@ -13,7 +14,8 @@ router.post("/",async(req,res)=>{
 })
 router.get("/",async(req,res)=>{
     try {
-        
+        const courses=await Courses.find()
+        res.status(200).json({"data":courses})
     } catch (error) {
         console.log(error)
     }
